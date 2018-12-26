@@ -1,0 +1,19 @@
+//Color Variables
+
+$colors: (
+    primaryPurple:  #8E44AD,
+    accentYellow:  #F4D03F,
+    accentGreen:  #26C281,
+    prettyPink: #ff6bd6
+);
+
+//Color Variables End
+
+body, html {
+    
+    height: 100%;
+}
+
+#bg{
+    background-color: color(primaryPurple);
+}
