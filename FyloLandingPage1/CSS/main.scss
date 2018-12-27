@@ -1,19 +1,50 @@
 //Color Variables
 
 $colors: (
-    primaryPurple:  #8E44AD,
-    accentYellow:  #F4D03F,
-    accentGreen:  #26C281,
-    prettyPink: #ff6bd6
+    primary: #8E44AD
 );
 
+$borders: 15px;
+$padding: 0px;
 //Color Variables End
+
+
+@function color($color-name){
+    @return map-get($colors, $color-name)
+}
+$desktop: 840px;
+@mixin desktop {
+    @media (min-width: #{$desktop}){
+        @content;
+    }
+}
 
 body, html {
     
     height: 100%;
+    width: 100%;
 }
 
-#bg{
-    background-color: color(primaryPurple);
+body{
+    margin: 0 auto;
+    padding: $padding;
+
+    #bg{
+        clip-path: polygon(100% 0, 100% 77%, 58% 100%, 0 100%, 0 0);
+        background-color: color(primary);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        @include desktop {
+            clip-path: polygon(69% 40%, 100% 0, 100% 38%, 100% 100%, 38% 80%, 0 100%, 0 0);
+        }  
+          
 }
+}
+
+#buttons{
+    margin: 36px;
+}
+
